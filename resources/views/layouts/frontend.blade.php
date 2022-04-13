@@ -57,7 +57,7 @@
         ga("send", "pageview");
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
-    <script src="{{ url('/frontend/js/app.js"') }}></script>
+    <script src="{{ url('/frontend/js/app.js') }}"></script>
 </body>
 
 </html>
