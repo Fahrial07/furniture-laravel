@@ -51,10 +51,10 @@
                     <table id="crudTable">
                         <thead>
                             <tr>
-                                <td>ID</td>
-                                <td>Photo</td>
-                                <td>Featured</td>
-                                <td>Aksi</td>
+                                <th>ID</th>
+                                <th>Photo</th>
+                                <th>Featured</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

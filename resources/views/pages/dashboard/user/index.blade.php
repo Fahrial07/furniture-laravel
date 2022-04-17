@@ -23,8 +23,12 @@
                         name: 'name'
                     },
                     {
-                        data: 'price',
-                        name: 'price'
+                        data: 'email',
+                        name: 'email'
+                    },
+                    {
+                        data: 'roles',
+                        name: 'roles'
                     },
                     {
                         data: 'action',
@@ -40,12 +44,6 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="mb-10 py-5">
-                <a href="{{ route('dashboard.product.create') }}"
-                    class="font-bold py-2 px-4 text-white bg-green-600 hover:bg-green-500 rounded shadow-lg">
-                    + Create Product
-                </a>
-            </div>
             <div class="shadow overflow-hidden sm-rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <table id="crudTable">
@@ -53,7 +51,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
-                                <th>Harga</th>
+                                <th>Email</th>
+                                <th>Roles</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
