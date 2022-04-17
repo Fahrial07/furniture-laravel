@@ -20,6 +20,9 @@
                         <x-jet-nav-link href="{{ route('dashboard.product.index') }}" :active="request()->routeIs('dashboard.product.index')">
                             {{ __('Products') }}
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
+                            {{ __('Transaction') }}
+                        </x-jet-nav-link>
                     @endif
 
                 </div>
@@ -165,6 +168,9 @@
             @if (Auth::user()->roles == 'ADMIN')
                 <x-jet-nav-link href="{{ route('dashboard.product.index') }}" :active="request()->routeIs('dashboard.product.index')">
                     {{ __('Products') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
+                    {{ __('Transaction') }}
                 </x-jet-nav-link>
             @endif
 
