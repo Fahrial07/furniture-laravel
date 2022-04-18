@@ -39,7 +39,7 @@ class ProductController extends Controller
                     ';
                 })
                 ->editColumn('price', function ($item) {
-                    return number_format($item->price);
+                    return 'Rp. ' . number_format($item->price);
                 })
                 ->rawColumns(['action'])
                 ->make();
