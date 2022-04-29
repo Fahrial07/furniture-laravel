@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\ProductGalleryController;
 
 /*
@@ -38,13 +39,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/cart/{id}', [FrontendController::class, 'cartAdd'])->name('cart-add');
     Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
     Route::delete('/cart/{id}', [FrontendController::class, 'cartDelete'])->name('cart-delete');
+    Route::post('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+
 });
 
 
 //grouping routes
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
-
+    Route::resource('my-transaction', MyTransactionController::class)->only(['index','show']);
     Route::middleware(['admin'])->group(function () {
         Route::resource('product', ProductController::class);
         Route::resource('product.gallery', ProductGalleryController::class)->shallow()->only([
